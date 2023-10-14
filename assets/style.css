@@ -1,0 +1,40 @@
+* {
+    background-color: #d8d8f6;
+}
+
+.info-box {
+    border: 2px solid #2c2c34;
+    background-color: #978897;
+    margin: 3%;
+}
+
+h3 {
+    text-align: center;
+    background-color: #978897;
+}
+
+ol, li {
+    background-color: #978897;
+}
+
+.buttons {
+    margin: 3%;
+    display: flex;
+    justify-content: flex-end;
+    background-color: #978897;
+}
+
+.start {
+    display: flex;
+    justify-content: center;
+}
+
+#continue-button {
+    margin: auto 3% auto auto;
+    background-color: ;
+}
+
+#start-button {
+    background-color: #b18fcf;
+    font-size: 30px;
+}
