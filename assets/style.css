@@ -33,6 +33,13 @@ li {
     justify-content: center;
 }
 
+.quiz-box {
+    border: 5px solid #2c2c34;
+    margin: 4%;
+    display: flex;
+    flex-direction: row;
+}
+
 #start-button {
     background-color: #b18fcf;
     font-size: 30px;
@@ -48,4 +55,14 @@ li {
 #exit-button {
     font-family:'Courier New', Courier, monospace;
     font-size: 20px;
+}
+
+.time {
+    width: 30%;
+    border: 4px red solid;
+}
+
+.questions {
+    width: 70%;
+    border: 4px black solid;
 }

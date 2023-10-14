@@ -12,3 +12,5 @@
 
 /* quiz questions:  how are variables declared, types of variables, what logical comparisons, difference between function declaration and expression, how to create a function, how to add a comment, hpw to write an array, how to assign value to a variable*/
 
+
+
