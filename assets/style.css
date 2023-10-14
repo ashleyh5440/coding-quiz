@@ -1,5 +1,5 @@
 * {
-    background-color: #d8d8f6;
+    background-color: #7d7da6;
 }
 
 .info-box {
@@ -13,11 +13,11 @@ h3 {
     background-color: #978897;
 }
 
-ol, li {
+ol, li, p {
     background-color: #978897;
 }
 
-li {
+li, p {
     font-size: 20px;
 }
 
@@ -36,6 +36,7 @@ li {
 .quiz-box {
     border: 5px solid #2c2c34;
     margin: 4%;
+    padding: 2%;
     display: flex;
     flex-direction: row;
 }
@@ -48,26 +49,33 @@ li {
 
 #continue-button {
     margin: auto 3% auto auto;
-    font-family:'Courier New', Courier, monospace;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
+    background-color: #b18fcf;
 }
 
 #exit-button {
-    font-family:'Courier New', Courier, monospace;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
 }
 
 .time {
     width: 30%;
-    border: 4px red solid;
+    margin-right: 1%;
+    /* border: 4px red solid; */
+    background-color: #978897;
 }
 
 .questions {
     width: 70%;
-    border: 4px black solid;
+    margin-left: 1%;
+    /* border: 4px black solid; */
+    background-color: #494850;
 }
 
 #next-question {
     background-color: #b18fcf;
     font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 1% 2%;
 }
