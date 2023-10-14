@@ -66,3 +66,8 @@ li {
     width: 70%;
     border: 4px black solid;
 }
+
+#next-question {
+    background-color: #b18fcf;
+    font-size: 20px;
+}
