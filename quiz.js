@@ -16,6 +16,8 @@ let secondsLeft = 60
 let timeInterval;
 timerEl.textContent = secondsLeft
 
+let questions = document.createElement("h2")
+
 function timer () {
     secondsLeft -- 
     timerEl.textContent = secondsLeft
@@ -36,95 +38,72 @@ startQuiz () //calls/starts function
 
 
 // // quiz questions
-let questions = [
+const questions = [
     {
-    number: 1,
     question: "How are variables declared?",
-    answer: "var, let, const",
-    options: [
+    answers: [
         "href, var, src",
         "if, function, const",
         "var, let, const"
             ]
+    correctIndex: 2
     }, 
 
     {
-    number: 2, 
     question: "What is the differenence between function declarations and function expressions?",
-    answer: "Function declarations are global and load before any code is executed; function expressions are local and only load when that line is reached"
-    options: [
+    answers: [
         "They're the same",
         "Function declarations are global and load before any code is executed; function expressions are local and only load when that line is reached",
+        "They are the same",
         "Function declarations are local and only load when that line is reached; function expressions are global and load before any code is executed"
             ]
+        correctIndex: 0
     },
 
     {
-    number: 3,
     question: "What are the different types of variables?",
-    answer: "undefined, string, number, boolean",
-    options: [
+    answers: [
         "undefined, string, number, boolean",
         "tag, string, number, stylesheet",
         "boolean, method, number, function"
             ]
+    correctIndex: 0
     },
 
     {
-    number: 4,
     question: "How do you add a comment in JavaScript?"
-    answer: "// or /* */"
-    options: [
+    answers: [
         "<!-- --> or //",
         "$$ or @@",
         "// or /* */"
             ]
+    correctIndex: 2
     },
 
     {
-    number: 5,
     question: "What is the correct format for an array?",
-    answer: "var colors = ['black', 'orange', 'green']", 
-    options: [
+    answers: [
         "var colors = ['black', 'orange', 'green']", 
         "var colors = black orange green",
         "var colors = (black), (orange), (green)"
             ]
+    correctIndex: 0
     },
 
     {
-    number: 6,
     question: "Where do you link a JavaScript file in an HTML document?",
-    answer: "At the bottom of the body with <script> tags",
-    options: [
+    answers: [
         "At the top of the body in a <link> tag",
         "At the bottom of the body with <script> tags",
         "In the middle of the body with <a> tags"
             ]
+    correctIndex: 1
     },
-
-    {
-    number: 7,
-    question: "How does a for loop start?",
-    answer: "for (let i = 0;",
-    options: [
-        "for (let i = 0;",
-        "for let (i = 0;",
-        "for let (i) = (0"
-    ]
-    },
-
-    {
-    number: 8,
-    question: "How do assign value to a variable?"
-    answer: "=",
-    options: [
-        "+",
-        "%",
-        "="
-    ]
-    }
 ];
+
+let currentQuestion = 0;
+let timer = 60;
+let score = 0
 
 /* need to keep track of scores
 users need to put in initals */
