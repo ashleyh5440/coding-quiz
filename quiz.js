@@ -9,32 +9,25 @@
 // THEN the game is over
 // WHEN the game is over
 // THEN I can save my initials and my score
+const timerEl = document.getElementById("timer")
+let secondsLeft = 60
 let timeInterval;
+timerEl.textContent = secondsLeft
 
-// timer
-document.getElementById("timer").innerHTML = 05 + ":" + 00; //starts timer at 5 minutes
-startTimer();
-
-function startTimer () {
-    let presentTime = document.getElementById("timer").innerHTML;
-    let timeArray = presentTime.split(/[:]+/);
-    let m = timeArray[0];
-    let s = checkSecond((timeArray[1] - 1));
-    if(s == 59){m = m - 1}
-    // if(m < 1 && s == 0 )
-
-    document.getElementById("timer").innerHTML = m + ":" + s;
-    // clearTimeout(timeInterval)
-    timeInterval = setTimeout(startTimer, 1000) //makes seconds count down by the second
-    // has to clear if they run out of time, questions, or lose time
-
+function timer () {
+    secondsLeft -- 
+    timerEl.textContent = secondsLeft
+    if(secondsLeft <= 0)
+    endQuiz ()
+}
+function startQuiz () {
+    timeInterval = setInterval (timer, 1000)
+}
+function endQuiz () {
+    clearInterval(timeInterval)
 }
 
-function checkSecond(sec) {
-    if (sec < 10 && sec >= 0) { sec = "0" + sec}; //adds 0 to numbers less than 10
-    if (sec < 0) {sec = "59";}
-    return sec;
-}
+startQuiz () //calls/starts function
 
 //need a function to end the timer and bring users to the score
 // ^ need to use clearInterval method somehow

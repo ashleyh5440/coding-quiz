@@ -42,7 +42,7 @@ li, p {
 }
 
 .btn {
-    
+
 }
 
 #start {
@@ -86,4 +86,9 @@ li, p {
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
     margin: 1% 2%;
+}
+
+/* make a hidden/hide class */
+.hidden {
+    display: none;
 }
