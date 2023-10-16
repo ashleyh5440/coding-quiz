@@ -37,7 +37,7 @@ startQuiz () //calls/starts function
 //still needs to end after user answers all questions and take time away for wrong answers
 
 
-// // quiz questions
+// quiz questions
 const questions = [
     {
     question: "How are variables declared?",
@@ -102,10 +102,9 @@ const questions = [
 ];
 
 let currentQuestion = 0;
-// let timer = 60;
 let score = 0
 
-function displayQuestion () {
+function displayQuestion () { //displays question and choices
     let questionText = document.querySelector("#question") 
     questionText.textContent = questions [currentQuestion].question 
     let choice1Text = document.querySelector("#choice1") 
@@ -116,17 +115,17 @@ function displayQuestion () {
     choice3Text.textContent = questions [currentQuestion].answers [2]
 }
 
-displayQuestion ()
+displayQuestion()
 
-let nextQuestionBtn = document.querySelector("#next-question") 
+let nextQuestionBtn = document.querySelector("#next-question") //assigns a job to the next question button
 
+//goes to the next question when button is clicked
 nextQuestionBtn.addEventListener("click", function(){
-    currentQuestion++;
+    currentQuestion++; //'increases' the question by 1
     displayQuestion ()
-})
+}) 
 
-
+// add event listers for the choices
 /* need to keep track of scores
 users need to put in initals */
 
-// add event listers for the choices
