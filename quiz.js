@@ -16,7 +16,7 @@ let secondsLeft = 60
 let timeInterval;
 timerEl.textContent = secondsLeft
 
-let questions = document.createElement("h2")
+let questionsEl = document.createElement("h2")
 
 function timer () {
     secondsLeft -- 
@@ -45,7 +45,7 @@ const questions = [
         "href, var, src",
         "if, function, const",
         "var, let, const"
-            ]
+            ],
     correctIndex: 2
     }, 
 
@@ -56,7 +56,7 @@ const questions = [
         "Function declarations are global and load before any code is executed; function expressions are local and only load when that line is reached",
         "They are the same",
         "Function declarations are local and only load when that line is reached; function expressions are global and load before any code is executed"
-            ]
+            ],
         correctIndex: 0
     },
 
@@ -66,17 +66,17 @@ const questions = [
         "undefined, string, number, boolean",
         "tag, string, number, stylesheet",
         "boolean, method, number, function"
-            ]
+            ],
     correctIndex: 0
     },
 
     {
-    question: "How do you add a comment in JavaScript?"
+    question: "How do you add a comment in JavaScript?",
     answers: [
         "<!-- --> or //",
         "$$ or @@",
         "// or /* */"
-            ]
+            ],
     correctIndex: 2
     },
 
@@ -86,7 +86,7 @@ const questions = [
         "var colors = ['black', 'orange', 'green']", 
         "var colors = black orange green",
         "var colors = (black), (orange), (green)"
-            ]
+            ],
     correctIndex: 0
     },
 
@@ -96,14 +96,37 @@ const questions = [
         "At the top of the body in a <link> tag",
         "At the bottom of the body with <script> tags",
         "In the middle of the body with <a> tags"
-            ]
+            ],
     correctIndex: 1
     },
 ];
 
 let currentQuestion = 0;
-let timer = 60;
+// let timer = 60;
 let score = 0
+
+function displayQuestion () {
+    let questionText = document.querySelector("#question") 
+    questionText.textContent = questions [currentQuestion].question 
+    let choice1Text = document.querySelector("#choice1") 
+    choice1Text.textContent = questions [currentQuestion].answers [0]
+    let choice2Text = document.querySelector("#choice2") 
+    choice2Text.textContent = questions [currentQuestion].answers [1]
+    let choice3Text = document.querySelector("#choice3") 
+    choice3Text.textContent = questions [currentQuestion].answers [2]
+}
+
+displayQuestion ()
+
+let nextQuestionBtn = document.querySelector("#next-question") 
+
+nextQuestionBtn.addEventListener("click", function(){
+    currentQuestion++;
+    displayQuestion ()
+})
+
 
 /* need to keep track of scores
 users need to put in initals */
+
+// add event listers for the choices
