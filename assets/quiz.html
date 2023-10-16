@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="./quiz.css">
     <title>Coding Quiz</title>
 </head>
 <body>
     <main>
-        <section class="start">
+        <!-- <section class="start">
             <button class="btn" id="start">Start Quiz</button>
-        </section>
+        </section> -->
         <!-- rule box -->
         <!-- this should disappear when user clicks continue/exit -->
-        <section class="info-box">
+        <!-- <section class="info-box">
             <h3>Quiz Rules:</h3>
             <ol>
                 <li>You will have 5 minutes to complete the quiz</li>
@@ -22,22 +22,32 @@
                 
             </ol>
             <div class="buttons">
-                <a href="./assets/quiz.html"><button class="btn" id="continue">Continue</button></a>
+                <button class="btn" id="continue">Continue</button>
                 <button class="btn" id="exit">Exit Quiz</button>
             </div>
-        </section>
+        </section> -->
         <!-- quiz box -->
-        <!-- <section class="quiz-box">
+        <section class="quiz-box">
             <div class="time">
                 <p>Time left:</p>
                 <span id="timer"></span>
             </div>
-            <div class="questions">
+            <div class="questions-box">
             <br>
+                <div id="question">What is the answer to this question?</div>
+                    <div class="choice-container">
+                        <p class="choice" data-nuber="1">A) choice</p>
+                    </div>
+                    <div class="choice-container">
+                        <p class="choice" data-number="2">B) choice</p>
+                    </div>
+                    <div class="choice-container">
+                        <p class="choice" data-number="3">C) choice</p>
+                    </div>
                 <button id="next-question">Next question</button>
             </div>
-        </section> -->
+        </section>
     </main>
-    <script src="./assets/script.js"></script>
+    <script src="./quiz.js"></script>
 </body>
 </html>
