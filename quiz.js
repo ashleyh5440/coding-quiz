@@ -113,10 +113,10 @@ let score = 0
 function displayQuestion () { //displays question and choices
     let questionText = document.querySelector("#question") 
     questionText.textContent = questions [currentQuestion].question 
+
     let choice1Text = document.querySelector("#choice1") 
     choice1Text.textContent = questions [currentQuestion].answers [0]
-
-    choice1Text.setAttribute("data-correct-index", questions[currentQuestion].correctIndex)
+    choice1Text.setAttribute("data-correct-index", questions[currentQuestion].correctIndex) //this assigns correctIndex to each button
 
     let choice2Text = document.querySelector("#choice2") 
     choice2Text.textContent = questions[currentQuestion].answers [1]
@@ -124,15 +124,7 @@ function displayQuestion () { //displays question and choices
 
     let choice3Text = document.querySelector("#choice3") 
     choice3Text.textContent = questions [currentQuestion].answers [2]
-    choice3Text.setAttribute("data-correct-index", questions[currentQuestion].correctIndex)
-
-    // if (currentQuestion >= questions.length) {
-    //     for (let i = 0; i < question.length; i++) {
-    //         const choicesEL = array[index];
-            
-    //     }
-    // }
-   
+    choice3Text.setAttribute("data-correct-index", questions[currentQuestion].correctIndex) 
 }
 
 displayQuestion()
@@ -145,12 +137,13 @@ nextQuestionBtn.addEventListener("click", function(){
     displayQuestion ()
 }) 
 
+
 choicesEL.addEventListener("click",
-    function(event) {
-if (event.target.matches("button") === true) {
+    function(event) { //makes it so that clicking anywhere on the diz selects the nearest button
+if (event.target.matches("button") === true) { //^ counters the code and makes the js listen for a button click specifically
     console.log(event.target)
-    let userClick = event.target.dataset.number
-    let correctAnswer = event.target.dataset.correct-index
+    let userClick = event.target.dataset.number //refers to the data-number
+    let correctAnswer = event.target.dataset.data-correct-index
     if userClick === correctAnswer()
   }
     } 
