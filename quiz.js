@@ -15,8 +15,7 @@ const timerEl = document.getElementById("timer")
 let secondsLeft = 60
 let timeInterval;
 timerEl.textContent = secondsLeft
-
-let questionsEl = document.createElement("h2")
+let quizBox = document.getElementById
 
 function timer () {
     secondsLeft -- 
@@ -112,6 +111,12 @@ function displayQuestion () { //displays question and choices
     choice2Text.textContent = questions [currentQuestion].answers [1]
     let choice3Text = document.querySelector("#choice3") 
     choice3Text.textContent = questions [currentQuestion].answers [2]
+    if (currentQuestion >= questions.length) {
+        //need to make a pop to end the quiz
+    }
+    else {
+        //quiz runs through
+    }
 }
 
 displayQuestion()
@@ -123,6 +128,15 @@ nextQuestionBtn.addEventListener("click", function(){
     currentQuestion++; //'increases' the question by 1
     displayQuestion ()
 }) 
+
+// correctIndex.addEventListener("click",
+// for (let i = 0; i < questions.length; i++) {
+//     const element = questions[i];
+    
+// }
+// )
+
+
 
 // add event listers for the choices
 /* need to keep track of scores
