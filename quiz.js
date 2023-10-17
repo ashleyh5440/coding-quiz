@@ -141,10 +141,15 @@ nextQuestionBtn.addEventListener("click", function(){
 choicesEL.addEventListener("click",
     function(event) { //makes it so that clicking anywhere on the diz selects the nearest button
 if (event.target.matches("button") === true) { //^ counters the code and makes the js listen for a button click specifically
-    console.log(event.target)
+    console.log(event.target) //event.target is what is recieving the event, what's being clicked on
     let userClick = event.target.dataset.number //refers to the data-number
     let correctAnswer = event.target.dataset.data-correct-index
-    if userClick === correctAnswer()
+    if(userClick === correctAnswer) {
+        //changes color
+    }
+    else {
+        //needs to subtract time from the timer
+    }
   }
     } 
 )
