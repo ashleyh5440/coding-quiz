@@ -15,7 +15,8 @@ const timerEl = document.getElementById("timer")
 let secondsLeft = 60
 let timeInterval;
 timerEl.textContent = secondsLeft
-let quizBox = document.getElementById
+let quizBoxEl = document.getElementById("quizBox")
+let choicesEL = document.getElementById("choices")
 
 function timer () {
     secondsLeft -- 
