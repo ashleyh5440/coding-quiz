@@ -41,6 +41,7 @@ startQuiz () //calls/starts function
 // quiz questions
 const questions = [
     {
+    id: 0,
     question: "How are variables declared?",
     answers: [
         "href, var, src",
@@ -51,6 +52,7 @@ const questions = [
     }, 
 
     {
+    id: 1,
     question: "What is the differenence between function declarations and function expressions?",
     answers: [
         "Function declarations are global and load before any code is executed; function expressions are local and only load when that line is reached",
@@ -61,6 +63,7 @@ const questions = [
     },
 
     {
+    id: 2,
     question: "What are the different types of variables?",
     answers: [
         "undefined, string, number, boolean",
@@ -71,6 +74,7 @@ const questions = [
     },
 
     {
+    id: 3,
     question: "How do you add a comment in JavaScript?",
     answers: [
         "<!-- --> or //",
@@ -81,6 +85,7 @@ const questions = [
     },
 
     {
+    id: 4,
     question: "What is the correct format for an array?",
     answers: [
         "var colors = ['black', 'orange', 'green']", 
@@ -91,6 +96,7 @@ const questions = [
     },
 
     {
+    id: 5,
     question: "Where do you link a JavaScript file in an HTML document?",
     answers: [
         "At the top of the body in a <link> tag",
@@ -109,16 +115,23 @@ function displayQuestion () { //displays question and choices
     questionText.textContent = questions [currentQuestion].question 
     let choice1Text = document.querySelector("#choice1") 
     choice1Text.textContent = questions [currentQuestion].answers [0]
+
+    choice1Text.setAttribute("data-correct-index", questions[currentQuestion].correctIndex)
+
     let choice2Text = document.querySelector("#choice2") 
-    choice2Text.textContent = questions [currentQuestion].answers [1]
+    choice2Text.textContent = questions[currentQuestion].answers [1]
+    choice2Text.setAttribute("data-correct-index", questions[currentQuestion].correctIndex)
+
     let choice3Text = document.querySelector("#choice3") 
     choice3Text.textContent = questions [currentQuestion].answers [2]
-    if (currentQuestion >= questions.length) {
-        for (let i = 0; i < question.length; i++) {
-            const choicesEL = array[index];
+    choice3Text.setAttribute("data-correct-index", questions[currentQuestion].correctIndex)
+
+    // if (currentQuestion >= questions.length) {
+    //     for (let i = 0; i < question.length; i++) {
+    //         const choicesEL = array[index];
             
-        }
-    }
+    //     }
+    // }
    
 }
 
@@ -131,6 +144,17 @@ nextQuestionBtn.addEventListener("click", function(){
     currentQuestion++; //'increases' the question by 1
     displayQuestion ()
 }) 
+
+choicesEL.addEventListener("click",
+    function(event) {
+if (event.target.matches("button") === true) {
+    console.log(event.target)
+    let userClick = event.target.dataset.number
+    let correctAnswer = event.target.dataset.correct-index
+    if userClick === correctAnswer()
+  }
+    } 
+)
 
 //choosing answers
 //would it be true or false, like a boolean?
