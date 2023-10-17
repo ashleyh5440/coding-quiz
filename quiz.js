@@ -54,7 +54,7 @@ const questions = [
     question: "What is the differenence between function declarations and function expressions?",
     answers: [
         "Function declarations are global and load before any code is executed; function expressions are local and only load when that line is reached",
-        "They are the same",
+        "They're the same and this question is dumb",
         "Function declarations are local and only load when that line is reached; function expressions are global and load before any code is executed",
             ],
         correctIndex: 0
@@ -132,10 +132,17 @@ nextQuestionBtn.addEventListener("click", function(){
     displayQuestion ()
 }) 
 
+//choosing answers
+//would it be true or false, like a boolean?
 // correctIndex.addEventListener("click",
-// for (let i = 0; i < questions.length; i++) {
-//     const element = questions[i];
-    
+// function() {
+
+// }
+// if(correctIndex === true) {
+
+// }
+// else {
+//     secondsLeft -= 5;
 // }
 // )
 

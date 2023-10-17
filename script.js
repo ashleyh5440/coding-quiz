@@ -12,6 +12,7 @@
 
 const continueBtn = document.querySelector("#continue")
 const startBtn = document.querySelector("#start")
+// const exitBtn = document.querySelector("#exit")
 
 continueBtn.addEventListener("click",
 function () {
@@ -23,4 +24,8 @@ function () {
     document.querySelector(".info-box").classList.remove("hidden")
 }
 );
+
+// exitBtn.addEventListener("click",
+// function ()
+// )
 
