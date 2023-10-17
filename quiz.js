@@ -31,6 +31,7 @@ function startQuiz () {
 
 function endQuiz () {
     clearInterval(timeInterval)
+    quizBoxEl.style.display = "none";
 }
 
 startQuiz () //calls/starts function
@@ -113,11 +114,12 @@ function displayQuestion () { //displays question and choices
     let choice3Text = document.querySelector("#choice3") 
     choice3Text.textContent = questions [currentQuestion].answers [2]
     if (currentQuestion >= questions.length) {
-        //need to make a pop to end the quiz
+        for (let i = 0; i < question.length; i++) {
+            const choicesEL = array[index];
+            
+        }
     }
-    else {
-        //quiz runs through
-    }
+   
 }
 
 displayQuestion()
