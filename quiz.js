@@ -52,10 +52,9 @@ const questions = [
     {
     question: "What is the differenence between function declarations and function expressions?",
     answers: [
-        "They're the same",
         "Function declarations are global and load before any code is executed; function expressions are local and only load when that line is reached",
         "They are the same",
-        "Function declarations are local and only load when that line is reached; function expressions are global and load before any code is executed"
+        "Function declarations are local and only load when that line is reached; function expressions are global and load before any code is executed",
             ],
         correctIndex: 0
     },
