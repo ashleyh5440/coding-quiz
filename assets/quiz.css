@@ -50,8 +50,6 @@ p {
     font-size: 200%;
 }
 
-
-
 #next-question {
     background-color: #b18fcf;
     font-size: 20px;
@@ -60,6 +58,24 @@ p {
 }
  #question {
     font-size: 25px;
+ }
+
+ #save, #retake {
+    background-color: #2c2c34;
+    font-size: 20px;
+    margin: 2%;
+    padding: 3%;
+    color: white;
+    border-radius: 30%;
+ }
+
+ #clear {
+    background-color: #7a7a97;
+    font-size: 20px;
+    margin: 2%;
+    padding: 3%;
+    color: white;
+    border-radius: 30%;
  }
 
  span {
