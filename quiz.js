@@ -116,15 +116,18 @@ function displayQuestion () { //displays question and choices
 
     let choice1Text = document.querySelector("#choice1") 
     choice1Text.textContent = questions [currentQuestion].answers [0]
-    choice1Text.setAttribute("data-correct-index", questions[currentQuestion].correctIndex) //this assigns correctIndex to each button
+    choice1Text.setAttribute("data-correctindex", questions[currentQuestion].correctIndex) //this assigns correctIndex to each button
+    choice1Text.classList.remove("correct-answer");
 
     let choice2Text = document.querySelector("#choice2") 
     choice2Text.textContent = questions[currentQuestion].answers [1]
-    choice2Text.setAttribute("data-correct-index", questions[currentQuestion].correctIndex)
+    choice2Text.setAttribute("data-correctindex", questions[currentQuestion].correctIndex)
+    choice2Text.classList.remove("correct-answer");
 
     let choice3Text = document.querySelector("#choice3") 
     choice3Text.textContent = questions [currentQuestion].answers [2]
-    choice3Text.setAttribute("data-correct-index", questions[currentQuestion].correctIndex) 
+    choice3Text.setAttribute("data-correctindex", questions[currentQuestion].correctIndex) 
+    choice3Text.classList.remove("correct-answer");
 }
 
 displayQuestion()
@@ -142,10 +145,14 @@ choicesEL.addEventListener("click",
     function(event) { //makes it so that clicking anywhere on the diz selects the nearest button
 if (event.target.matches("button") === true) { //^ counters the code and makes the js listen for a button click specifically
     console.log(event.target) //event.target is what is recieving the event, what's being clicked on
-    let userClick = event.target.dataset.number //refers to the data-number
-    let correctAnswer = event.target.dataset.data-correct-index
+    let userClick = event.target.dataset["number"] //refers to the data-number
+    let correctAnswer = event.target.dataset["correctindex"]
+    console.log(correctAnswer);
+    console.log(userClick);
     if(userClick === correctAnswer) {
-        //changes color
+        //changes color 
+        event.target.classList.add("correct-answer");
+
     }
     else {
         //needs to subtract time from the timer
