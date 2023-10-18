@@ -11,12 +11,20 @@
 // THEN I can save my initials and my score
 
 //timer
-const timerEl = document.getElementById("timer")
+const timerEl = document.getElementById("timer");
 let secondsLeft = 60
 let timeInterval;
 timerEl.textContent = secondsLeft
-let quizBoxEl = document.getElementById("quizBox")
-let choicesEL = document.getElementById("choices")
+let quizBoxEl = document.getElementById("quizBox");
+let choicesEL = document.getElementById("choices");
+let scoreEl = document.getElementById("scores");
+let finalScoreEl = document.getElementById("finalScore");
+let nameEl = document.getElementById("initials");
+let saveButtonEl = document.getElementById("save");
+let highscoresEl = document.getElementById("scores");
+let scoreListEl = document.getElementById("scoreList");
+let refreshEl = document.getElementById("retake");
+let clearScoresEl = document.getElementById("clear");
 
 function timer () {
     secondsLeft -- 
