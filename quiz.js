@@ -162,22 +162,6 @@ if (event.target.matches("button") === true) { //^ counters the code and makes t
     } 
 )
 
-//choosing answers
-//would it be true or false, like a boolean?
-// correctIndex.addEventListener("click",
-// function() {
-
-// }
-// if(correctIndex === true) {
-
-// }
-// else {
-//     secondsLeft -= 5;
-// }
-// )
-
-
-
 // add event listers for the choices
 /* need to keep track of scores
 users need to put in initals */
