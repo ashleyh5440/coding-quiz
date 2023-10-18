@@ -13,7 +13,7 @@ p {
     align-items: center;
 }
 
-.container {
+.container, .end-container, .scores-container {
     border: 5px solid #2c2c34;
     margin: 4%;
     padding: 2%;
@@ -86,4 +86,8 @@ p {
 
  .correct-answer {
     background-color: green; 
+ }
+
+ .hidden {
+    display: none;
  }

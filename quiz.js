@@ -20,10 +20,10 @@ let choicesEL = document.getElementById("choices");
 let scoreEl = document.getElementById("scores");
 let finalScoreEl = document.getElementById("finalScore");
 let nameEl = document.getElementById("initials");
-let saveButtonEl = document.getElementById("save");
+let saveBtn = document.getElementById("save");
 let highscoresEl = document.getElementById("scores");
 let scoreListEl = document.getElementById("scoreList");
-let refreshEl = document.getElementById("retake");
+let retakeEl = document.getElementById("retake");
 let clearScoresEl = document.getElementById("clear");
 
 function timer () {
@@ -173,4 +173,17 @@ if (event.target.matches("button") === true) { //^ counters the code and makes t
 // add event listers for the choices
 /* need to keep track of scores
 users need to put in initals */
+
+//end screen
+
+saveBtn.addEventListener("click", 
+function () {
+    document.querySelector(".scores-container").classList.remove("hidden")
+    document.querySelector(".end-container").classList.add("hidden")
+    
+}
+);
+
+//score screen
+
 
