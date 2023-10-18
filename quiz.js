@@ -10,12 +10,14 @@
 // WHEN the game is over
 // THEN I can save my initials and my score
 
-//timer
+
 const timerEl = document.getElementById("timer");
-let secondsLeft = 60
+let secondsLeft = 60;
 let timeInterval;
-timerEl.textContent = secondsLeft
+timerEl.textContent = secondsLeft;
+
 let quizBoxEl = document.getElementById("quizBox");
+let endEl = document.getElementById("endScreen")
 let choicesEL = document.getElementById("choices");
 let scoreEl = document.getElementById("scores");
 let finalScoreEl = document.getElementById("finalScore");
@@ -26,6 +28,7 @@ let scoreListEl = document.getElementById("scoreList");
 let retakeEl = document.getElementById("retake");
 let clearScoresEl = document.getElementById("clear");
 
+//timer
 function timer () {
     secondsLeft -- 
     timerEl.textContent = secondsLeft
@@ -44,7 +47,7 @@ function endQuiz () {
 }
 
 startQuiz () //calls/starts function
-//still needs to end after user answers all questions and take time away for wrong answers
+
 
 
 // quiz questions
@@ -117,7 +120,7 @@ const questions = [
 ];
 
 let currentQuestion = 0;
-let score = 0
+let score = 0;
 
 function displayQuestion () { //displays question and choices
     let questionText = document.querySelector("#question") 
@@ -151,16 +154,18 @@ nextQuestionBtn.addEventListener("click", function(){
 
 
 choicesEL.addEventListener("click",
-    function(event) { //makes it so that clicking anywhere on the diz selects the nearest button
-if (event.target.matches("button") === true) { //^ counters the code and makes the js listen for a button click specifically
+    function(event) { //makes it so that clicking anywhere on the div selects the nearest button
+if (event.target.matches("button") === true) { //^ counters the code above and makes the js listen for a button click specifically
     console.log(event.target) //event.target is what is recieving the event, what's being clicked on
     let userClick = event.target.dataset["number"] //refers to the data-number
     let correctAnswer = event.target.dataset["correctindex"]
-    console.log(correctAnswer);
-    console.log(userClick);
+
+    //this is where keeping score starts
+
     if(userClick === correctAnswer) {
         //changes color 
         event.target.classList.add("correct-answer");
+        //need to add that score increases
     }
     else {
         //needs to subtract time from the timer
@@ -171,10 +176,6 @@ if (event.target.matches("button") === true) { //^ counters the code and makes t
     } 
 )
 
-// add event listers for the choices
-/* need to keep track of scores
-users need to put in initals */
-
 //end screen
 
 saveBtn.addEventListener("click", 
@@ -182,9 +183,10 @@ function () {
     document.querySelector(".scores-container").classList.remove("hidden")
     document.querySelector(".end-container").classList.add("hidden")
     
+    //need the final score to show up after "Your score:", need the save button to actual save the user's initials and score
 }
 );
 
 //score screen
-
+//needs to display the high scores saved on the previous screen in the ul element, clear scores button needs to erase all scores
 
