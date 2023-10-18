@@ -152,10 +152,11 @@ if (event.target.matches("button") === true) { //^ counters the code and makes t
     if(userClick === correctAnswer) {
         //changes color 
         event.target.classList.add("correct-answer");
-
     }
     else {
         //needs to subtract time from the timer
+        secondsLeft -=5
+
     }
   }
     } 
