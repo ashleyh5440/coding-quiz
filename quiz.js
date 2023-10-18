@@ -40,6 +40,7 @@ function startQuiz () {
 function endQuiz () {
     clearInterval(timeInterval)
     quizBoxEl.style.display = "none";
+    document.querySelector(".end-container").classList.remove("hidden")
 }
 
 startQuiz () //calls/starts function
