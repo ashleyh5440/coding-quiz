@@ -23,7 +23,7 @@ let scoreEl = document.getElementById("scores");
 let finalScoreEl = document.getElementById("finalScore");
 let nameEl = document.getElementById("initials");
 let saveBtn = document.getElementById("save");
-let highscoresEl = document.getElementById("scores");
+let highScoresEl = document.getElementById("scores");
 let scoreListEl = document.getElementById("scoreList");
 let retakeEl = document.getElementById("retake");
 let clearScoresEl = document.getElementById("clear");
@@ -34,6 +34,8 @@ function timer () {
     timerEl.textContent = secondsLeft
     if(secondsLeft <= 0)
     endQuiz () //ends quiz when seconds reach 0
+    // if(userClick === correctAnswer) 
+    // score += 1
 }
 
 function startQuiz () {
@@ -43,6 +45,7 @@ function startQuiz () {
 function endQuiz () {
     clearInterval(timeInterval)
     quizBoxEl.style.display = "none";
+    finalScoreEl.textContent = score;
     document.querySelector(".end-container").classList.remove("hidden")
 }
 
@@ -144,6 +147,12 @@ function displayQuestion () { //displays question and choices
 
 displayQuestion()
 
+function displayScores() {
+    scoreEl.textContent = score;
+}
+
+displayScores();
+
 let nextQuestionBtn = document.querySelector("#next-question") //assigns a job to the next question button
 
 //goes to the next question when button is clicked
@@ -152,23 +161,24 @@ nextQuestionBtn.addEventListener("click", function(){
     displayQuestion ()
 }) 
 
+// I think I have to declare the score function here, then call it in the one below
 
 choicesEL.addEventListener("click",
     function(event) { //makes it so that clicking anywhere on the div selects the nearest button
 if (event.target.matches("button") === true) { //^ counters the code above and makes the js listen for a button click specifically
-    console.log(event.target) //event.target is what is recieving the event, what's being clicked on
+     //event.target is what is recieving the event, what's being clicked on
     let userClick = event.target.dataset["number"] //refers to the data-number
     let correctAnswer = event.target.dataset["correctindex"]
-
-    //this is where keeping score starts
 
     if(userClick === correctAnswer) {
         //changes color 
         event.target.classList.add("correct-answer");
         //need to add that score increases
+        score += 1; // For example, award 10 points for a correct answer
+    displayScores(); // Call a function to update the score on the screen
     }
     else {
-        //needs to subtract time from the timer
+        //subtracts time for wrong answers
         secondsLeft -=5
 
     }
