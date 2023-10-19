@@ -91,3 +91,7 @@ p {
  .hidden {
     display: none;
  }
+ /* #scores div {
+    display: block;
+    border: 5px solid black;
+ } */

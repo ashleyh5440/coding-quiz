@@ -24,7 +24,7 @@ let finalScoreEl = document.getElementById("finalScore");
 let nameEl = document.getElementById("initials");
 let saveBtn = document.getElementById("save");
 let highScoresEl = document.getElementById("scores");
-let scoreListEl = document.getElementById("scoreList");
+let scoresListEl = document.getElementById("scoresList");
 let retakeEl = document.getElementById("retake");
 let clearScoresEl = document.getElementById("clear");
 
@@ -148,7 +148,7 @@ function displayQuestion () { //displays question and choices
 displayQuestion()
 
 function displayScores() {
-    scoreEl.textContent = score;
+    scoresListEl.textContent = score;
 }
 
 displayScores();
