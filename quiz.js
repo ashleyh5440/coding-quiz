@@ -161,8 +161,6 @@ nextQuestionBtn.addEventListener("click", function(){
     displayQuestion ()
 }) 
 
-// I think I have to declare the score function here, then call it in the one below
-
 choicesEL.addEventListener("click",
     function(event) { //makes it so that clicking anywhere on the div selects the nearest button
 if (event.target.matches("button") === true) { //^ counters the code above and makes the js listen for a button click specifically
@@ -173,9 +171,8 @@ if (event.target.matches("button") === true) { //^ counters the code above and m
     if(userClick === correctAnswer) {
         //changes color 
         event.target.classList.add("correct-answer");
-        //need to add that score increases
-        score += 1; // For example, award 10 points for a correct answer
-    displayScores(); // Call a function to update the score on the screen
+        score += 1; //increases score by 1
+    displayScores(); 
     }
     else {
         //subtracts time for wrong answers
@@ -192,10 +189,9 @@ saveBtn.addEventListener("click",
 function () {
     document.querySelector(".scores-container").classList.remove("hidden")
     document.querySelector(".end-container").classList.add("hidden")
-    
-    //need the final score to show up after "Your score:", need the save button to actual save the user's initials and score
 }
 );
+
 
 //score screen
 //needs to display the high scores saved on the previous screen in the ul element, clear scores button needs to erase all scores
