@@ -194,10 +194,11 @@ function () {
     const userName = nameEl.value;
     if (userName) {
         const userScoreData = {
-            initials: userInitials,
+            initials: userName,
             score: score, // The user's score
         };
-        saveUserScore(userScoreData);
+        console.log(userScoreData)
+        saveUserScore();
     }
 }
 );
@@ -207,15 +208,26 @@ function () {
 //needs to display the high scores saved on the previous screen in the ul element, clear scores button needs to erase all scores
 
 //saves scores
-function saveUserScore(userScoreData) {
+function saveUserScore() {
     const existingScores = JSON.parse(localStorage.getItem("scores")) || [];
-    existingScores.push(userScoreData);
+    const newScore = {
+        initials: userName,
+        score: score,
+    }
+    existingScores.push(newScore);
     localStorage.setItem("scores", JSON.stringify(existingScores));
 }
 
 //displays scores
 function displaySavedScores() {
-    const savedScores
+    const savedScores  = JSON.parse(localStorage.getItem("scores"));
+    for (let i = 0; i < savedScores.length; i++) {
+        const userScore = savedScores[i];
+        const li = document.createElement("li");
+        li.setAttribute("class", "singleScore");
+        li.textContent = userScore.initials + " : " + userScore.score 
+        scoresListEl.appendChild(li) 
+    }
 }
 
 clearScoresEl.addEventListener("click", function () {
