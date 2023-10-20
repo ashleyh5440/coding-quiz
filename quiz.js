@@ -23,7 +23,7 @@ let scoreEl = document.getElementById("scores");
 let finalScoreEl = document.getElementById("finalScore");
 let nameEl = document.getElementById("initials");
 let saveBtn = document.getElementById("save");
-let highScoresEl = document.getElementById("scores");
+// let highScoresEl = document.getElementById("scores");
 let scoresListEl = document.getElementById("scoresList");
 let retakeEl = document.getElementById("retake");
 let clearScoresEl = document.getElementById("clear");
@@ -148,7 +148,7 @@ function displayQuestion () { //displays question and choices
 displayQuestion()
 
 function displayScores() {
-    scoresListEl.textContent = score;
+    scoresListEl.textContent = score; // assigned this to scoresList so that it displays within the ul
 }
 
 displayScores();
@@ -189,6 +189,16 @@ saveBtn.addEventListener("click",
 function () {
     document.querySelector(".scores-container").classList.remove("hidden")
     document.querySelector(".end-container").classList.add("hidden")
+
+    //save user initials 
+    const userName = nameEl.value;
+    if (userName) {
+        const userScoreData = {
+            initials: userInitials,
+            score: score, // The user's score
+        };
+        saveUserScore(userScoreData);
+    }
 }
 );
 
@@ -196,3 +206,21 @@ function () {
 //score screen
 //needs to display the high scores saved on the previous screen in the ul element, clear scores button needs to erase all scores
 
+//saves scores
+function saveUserScore(userScoreData) {
+    const existingScores = JSON.parse(localStorage.getItem("scores")) || [];
+    existingScores.push(userScoreData);
+    localStorage.setItem("scores", JSON.stringify(existingScores));
+}
+
+//displays scores
+function displaySavedScores() {
+    const savedScores
+}
+
+clearScoresEl.addEventListener("click", function () {
+    localStorage.removeItem("scores");
+    document.getElementById("scoreList");
+    scoreList.innerHTML = "";
+}
+)
