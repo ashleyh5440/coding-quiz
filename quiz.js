@@ -38,8 +38,6 @@ function endQuiz () {
 
 startQuiz () //calls/starts function
 
-
-
 // quiz questions
 const questions = [
     {
@@ -135,7 +133,7 @@ function displayQuestion () { //displays question and choices
 displayQuestion()
 
 function displayScores() {
-    scoresListEl.textContent = score; // assigned this to scoresList so that it displays within the ul
+    // scoresListEl.textContent = score; // assigned this to scoresList so that it displays within the ul
 }
 
 displayScores();
@@ -184,42 +182,82 @@ function () {
             initials: userName,
             score: score, // The user's score
         };
+        const scores = JSON.parse(localStorage.getItem("scores")) || [] //go into local storage and get scores, or if empty, then make empty array
+        scores.push(userScoreData);
+        localStorage.setItem("scores", JSON.stringify(scores))
         console.log(userScoreData)
-        saveUserScore();
+        getAllScores();
     }
 }
 );
+function getAllScores () {
+    const scores = JSON.parse(localStorage.getItem("scores")) || []
+    scores.sort(function(a, b){
+        return b.score - a.score //looks at each object in array and sort by descending order
+    })
+    scores.forEach(score => {
+        const liEl = document.createElement("li");
+        liEl.textContent = score.initials + "-" + score.score;
+        document.querySelector("ol").append(liEl);
+    });
+}
 
 
 //score screen
 //needs to display the high scores saved on the previous screen in the ul element, clear scores button needs to erase all scores
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //saves scores
-function saveUserScore() {
-    const existingScores = JSON.parse(localStorage.getItem("scores")) || [];
-    const newScore = {
-        initials: userName,
-        score: score,
-    }
-    existingScores.push(newScore);
-    localStorage.setItem("scores", JSON.stringify(existingScores));
-}
+// function saveUserScore() {
+//     const existingScores = JSON.parse(localStorage.getItem("scores")) || [];
+//     const newScore = {
+//         initials: userName,
+//         score: score,
+//     }
+//     existingScores.push(newScore);
+//     localStorage.setItem("scores", JSON.stringify(existingScores));
+// }
 
 //displays scores
-function displaySavedScores() {
-    const savedScores  = JSON.parse(localStorage.getItem("scores"));
-    for (let i = 0; i < savedScores.length; i++) {
-        const userScore = savedScores[i];
-        const li = document.createElement("li");
-        li.setAttribute("class", "singleScore");
-        li.textContent = userScore.initials + " : " + userScore.score 
-        scoresListEl.appendChild(li) 
-    }
-}
+// function displaySavedScores() {
+//     const savedScores  = JSON.parse(localStorage.getItem("scores"));
+//     for (let i = 0; i < savedScores.length; i++) {
+//         const userScore = savedScores[i];
+//         const li = document.createElement("li");
+//         li.setAttribute("class", "singleScore");
+//         li.textContent = userScore.initials + " : " + userScore.score 
+//         scoresListEl.appendChild(li) 
+//     }
+// }
 
-clearScoresEl.addEventListener("click", function () {
-    localStorage.removeItem("scores");
-    document.getElementById("scoreList");
-    scoreList.innerHTML = "";
-}
-)
+// clearScoresEl.addEventListener("click", function () {
+//     localStorage.removeItem("scores");
+//     document.getElementById("scoreList");
+//     scoreList.innerHTML = "";
+// }
+// )
